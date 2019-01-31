@@ -1,4 +1,4 @@
-FROM node:8.11.3-alpine
+FROM node:8.15.0-alpine
 
 RUN apk add --no-cache python && \
     python -m ensurepip && \
@@ -7,8 +7,8 @@ RUN apk add --no-cache python && \
     rm -r /root/.cache
 RUN npm install -g yarn
 
-RUN echo "http://dl-4.alpinelinux.org/alpine/v3.4/main" >> /etc/apk/repositories && \
-    echo "http://dl-4.alpinelinux.org/alpine/v3.4/community" >> /etc/apk/repositories
+RUN echo "http://dl-4.alpinelinux.org/alpine/v3.8/main" >> /etc/apk/repositories && \
+    echo "http://dl-4.alpinelinux.org/alpine/v3.8/community" >> /etc/apk/repositories
 
 
 RUN apk update && \
