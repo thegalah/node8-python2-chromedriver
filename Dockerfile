@@ -12,7 +12,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.8/main" >> /etc/apk/repositories
 
 
 RUN apk update && \
-    apk add python py-pip curl unzip libexif udev chromium chromium-chromedriver xvfb && \
+    apk add python py-pip curl unzip libexif udev chromium chromium-chromedriver xvfb zlib && \
     pip install selenium && \
     pip install pyvirtualdisplay
 
