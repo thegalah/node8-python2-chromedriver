@@ -12,7 +12,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.8/main" >> /etc/apk/repositories
 
 
 RUN apk update && \
-    apk add python py-pip curl unzip libexif udev chromium chromium-chromedriver xvfb zlib && \
+    apk add python py-pip curl unzip libexif udev chromium chromium-chromedriver xvfb && \
     pip install selenium && \
     pip install pyvirtualdisplay
 
@@ -26,6 +26,7 @@ RUN \
   && apk add --no-cache --virtual .build-deps \
     gifsicle pngquant optipng libjpeg-turbo-utils \
     udev ttf-opensans chromium \
+    python-dev build-base jpeg-dev zlib-dev \
   && rm -rf /var/cache/apk/* /tmp/*
 
 ENV CHROME_BIN /usr/bin/chromium-browser
